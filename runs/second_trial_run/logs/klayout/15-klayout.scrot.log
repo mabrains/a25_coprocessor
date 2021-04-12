@@ -1,0 +1,6 @@
+Using Techfile: /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt
+Using layout file: /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/cts/a25_coprocessor.cts.def
+[INFO] Reading tech file: /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt
+[INFO] Reading Layout file: /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/cts/a25_coprocessor.cts.def
+[INFO] Writing out PNG screenshot '/openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/cts/a25_coprocessor.cts.def.png'
+Done

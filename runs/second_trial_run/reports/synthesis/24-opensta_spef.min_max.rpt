@@ -1,0 +1,73 @@
+Startpoint: _1153_ (rising edge-triggered flip-flop clocked by i_clk)
+Endpoint: _1153_ (rising edge-triggered flip-flop clocked by i_clk)
+Path Group: i_clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _1153_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                  0.01    0.16    0.16 ^ _1153_/Q (sky130_fd_sc_hd__dfxtp_1)
+     2    0.00                           updateable_area[30] (net)
+                  0.01    0.00    0.16 ^ _0853_/A1 (sky130_fd_sc_hd__a22o_1)
+                  0.03    0.06    0.22 ^ _0853_/X (sky130_fd_sc_hd__a22o_1)
+     1    0.00                           _0105_ (net)
+                  0.03    0.00    0.22 ^ _1153_/D (sky130_fd_sc_hd__dfxtp_1)
+                                  0.22   data arrival time
+
+                  0.00    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.00    0.00   clock reconvergence pessimism
+                                  0.00 ^ _1153_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                         -0.02   -0.02   library hold time
+                                 -0.02   data required time
+-----------------------------------------------------------------------------
+                                 -0.02   data required time
+                                 -0.22   data arrival time
+-----------------------------------------------------------------------------
+                                  0.24   slack (MET)
+
+
+Startpoint: i_copro_crn[3] (input port clocked by i_clk)
+Endpoint: o_cache_flush (output port clocked by i_clk)
+Path Group: i_clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          4.00    4.00 v input external delay
+                  0.01    0.00    4.00 v i_copro_crn[3] (in)
+     1    0.00                           i_copro_crn[3] (net)
+                  0.01    0.00    4.00 v input8/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.16    0.25    4.25 v input8/X (sky130_fd_sc_hd__clkbuf_2)
+     5    0.02                           net8 (net)
+                  0.16    0.00    4.25 v _0520_/A (sky130_fd_sc_hd__or2_2)
+                  0.13    0.73    4.98 v _0520_/X (sky130_fd_sc_hd__or2_2)
+     4    0.01                           _0184_ (net)
+                  0.13    0.00    4.98 v _0944_/D (sky130_fd_sc_hd__or4_4)
+                  0.13    0.81    5.79 v _0944_/X (sky130_fd_sc_hd__or4_4)
+     3    0.00                           _0481_ (net)
+                  0.13    0.00    5.79 v _1007_/C (sky130_fd_sc_hd__nor3_4)
+                  0.28    0.27    6.06 ^ _1007_/Y (sky130_fd_sc_hd__nor3_4)
+     1    0.01                           net96 (net)
+                  0.28    0.00    6.06 ^ output96/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.04    0.25    6.30 ^ output96/X (sky130_fd_sc_hd__clkbuf_2)
+     1    0.02                           o_cache_flush (net)
+                  0.04    0.00    6.30 ^ o_cache_flush (out)
+                                  6.30   data arrival time
+
+                  0.00   20.00   20.00   clock i_clk (rise edge)
+                          0.00   20.00   clock network delay (ideal)
+                          0.00   20.00   clock reconvergence pessimism
+                         -4.00   16.00   output external delay
+                                 16.00   data required time
+-----------------------------------------------------------------------------
+                                 16.00   data required time
+                                 -6.30   data arrival time
+-----------------------------------------------------------------------------
+                                  9.70   slack (MET)
+
+

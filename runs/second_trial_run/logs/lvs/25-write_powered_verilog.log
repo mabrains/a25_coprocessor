@@ -1,0 +1,19 @@
+Notice 0: Reading LEF file:  /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/merged.lef
+Notice 0:     Created 13 technology layers
+Notice 0:     Created 25 technology vias
+Notice 0:     Created 440 library cells
+Notice 0: Finished LEF file:  /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/merged.lef
+Notice 0: 
+Reading DEF file: /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/routing/a25_coprocessor.def
+Notice 0: Design: a25_coprocessor
+Notice 0:     Created 171 pins.
+Notice 0:     Created 2883 components and 13777 component-terminals.
+Notice 0:     Created 2 special nets and 0 connections.
+Notice 0:     Created 992 nets and 2765 connections.
+Notice 0: Finished DEF file: /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/routing/a25_coprocessor.def
+Top-level design name: a25_coprocessor
+Default power net:  VPWR
+Default ground net: VGND
+Found a total of 1 power ports.
+Found a total of 1 ground ports.
+Modified power connections of 2883 cells (Remaining: 0 ).

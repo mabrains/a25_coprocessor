@@ -1,0 +1,6 @@
+<< properties >>
+string FIXED_BBOX 0 0 29580 31724
+string GDS_FILE /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/magic/a25_coprocessor.gds
+string GDS_END 2496022
+string GDS_START 217490
+<< end >>

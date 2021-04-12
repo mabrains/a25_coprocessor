@@ -1,0 +1,70 @@
+
+27. Executing CHECK pass (checking for obvious problems).
+checking module a25_coprocessor..
+Warning: Wire a25_coprocessor.\o_copro_read_data [31] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [30] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [29] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [28] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [27] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [26] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [25] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [24] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [23] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [22] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [21] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [20] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [19] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [18] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [17] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [16] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [15] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [14] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [13] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [12] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [11] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [10] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [9] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [8] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [7] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [6] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [5] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [4] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [3] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [2] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [1] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_copro_read_data [0] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [31] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [30] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [29] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [28] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [27] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [26] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [25] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [24] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [23] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [22] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [21] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [20] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [19] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [18] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [17] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [16] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [15] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [14] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [13] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [12] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [11] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [10] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [9] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [8] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [7] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [6] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [5] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [4] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [3] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [2] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [1] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cacheable_area [0] is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cache_flush is used but has no driver.
+Warning: Wire a25_coprocessor.\o_cache_enable is used but has no driver.
+found and reported 66 problems.

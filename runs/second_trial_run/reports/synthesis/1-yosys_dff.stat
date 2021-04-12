@@ -1,0 +1,23 @@
+
+20. Printing statistics.
+
+=== a25_coprocessor ===
+
+   Number of wires:                480
+   Number of wire bits:            789
+   Number of public wires:          22
+   Number of public wire bits:     300
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                661
+     $_ANDNOT_                     215
+     $_AND_                          1
+     $_MUX_                        171
+     $_NAND_                         4
+     $_NOR_                          1
+     $_NOT_                          1
+     $_ORNOT_                       35
+     $_OR_                          62
+     sky130_fd_sc_hd__dfxtp_2      171
+

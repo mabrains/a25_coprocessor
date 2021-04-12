@@ -1,0 +1,193 @@
+OpenROAD 0.9.0 1415572a73
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Warning: /openLANE_flow/designs/a25_coprocessor/runs/first_trial_run/tmp/resizer.lib line 32, default_operating_condition ss_100C_1v60 not found.
+Notice 0: Reading LEF file:  /openLANE_flow/designs/a25_coprocessor/runs/first_trial_run/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
+Notice 0:     Created 25 technology vias
+Notice 0:     Created 440 library cells
+Notice 0: Finished LEF file:  /openLANE_flow/designs/a25_coprocessor/runs/first_trial_run/tmp/merged_unpadded.lef
+Notice 0: 
+Reading DEF file: /openLANE_flow/designs/a25_coprocessor/runs/first_trial_run/tmp/placement/8-replace.def
+Notice 0: Design: a25_coprocessor
+Notice 0:     Created 163 pins.
+Notice 0:     Created 1013 components and 6024 component-terminals.
+Notice 0:     Created 2 special nets and 0 connections.
+Notice 0:     Created 807 nets and 2394 connections.
+Notice 0: Finished DEF file: /openLANE_flow/designs/a25_coprocessor/runs/first_trial_run/tmp/placement/8-replace.def
+create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+puts "\[INFO\]: Setting output delay to: $output_delay_value"
+[INFO]: Setting output delay to: 4.0
+puts "\[INFO\]: Setting input delay to: $input_delay_value"
+[INFO]: Setting input delay to: 4.0
+set_max_fanout $::env(SYNTH_MAX_FANOUT) [current_design]
+set clk_indx [lsearch [all_inputs] [get_port $::env(CLOCK_PORT)]]
+#set rst_indx [lsearch [all_inputs] [get_port resetn]]
+set all_inputs_wo_clk [lreplace [all_inputs] $clk_indx $clk_indx]
+#set all_inputs_wo_clk_rst [lreplace $all_inputs_wo_clk $rst_indx $rst_indx]
+set all_inputs_wo_clk_rst $all_inputs_wo_clk
+# correct resetn
+set_input_delay $input_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] $all_inputs_wo_clk_rst
+#set_input_delay 0.0 -clock [get_clocks $::env(CLOCK_PORT)] {resetn}
+set_output_delay $output_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] [all_outputs]
+# TODO set this as parameter
+set_driving_cell -lib_cell $::env(SYNTH_DRIVING_CELL) -pin $::env(SYNTH_DRIVING_CELL_PIN) [all_inputs]
+set cap_load [expr $::env(SYNTH_CAP_LOAD) / 1000.0]
+puts "\[INFO\]: Setting load to: $cap_load"
+[INFO]: Setting load to: 0.01765
+set_load  $cap_load [all_outputs]
+[INFO RSZ-0027] Inserted 94 input buffers.
+[INFO RSZ-0028] Inserted 66 output buffers.
+[INFO RSZ-0039] Resized 610 instances.
+Design Stats
+--------------------------------
+total instances          1173
+multi row instances         0
+fixed instances           301
+nets                      969
+design area           15089.5 u^2
+fixed area              601.8 u^2
+movable area           7981.4 u^2
+utilization                55 %
+utilization padded         92 %
+rows                       45
+row height                2.7 u
+
+[WARNING DPL-0019] detailed placement failed on _0886_
+[WARNING DPL-0019] detailed placement failed on _0770_
+[WARNING DPL-0019] detailed placement failed on _1083_
+[WARNING DPL-0019] detailed placement failed on _1018_
+[WARNING DPL-0019] detailed placement failed on _0915_
+[WARNING DPL-0018] detailed placement failed on input11.
+[WARNING DPL-0019] detailed placement failed on _1049_
+[WARNING DPL-0019] detailed placement failed on _0780_
+[WARNING DPL-0019] detailed placement failed on _1069_
+[WARNING DPL-0019] detailed placement failed on _0921_
+[WARNING DPL-0019] detailed placement failed on _1081_
+[WARNING DPL-0019] detailed placement failed on _0979_
+[WARNING DPL-0019] detailed placement failed on _1115_
+[WARNING DPL-0019] detailed placement failed on _1062_
+[WARNING DPL-0019] detailed placement failed on _1052_
+[WARNING DPL-0019] detailed placement failed on _0959_
+[WARNING DPL-0019] detailed placement failed on _0936_
+[WARNING DPL-0019] detailed placement failed on _0966_
+[WARNING DPL-0019] detailed placement failed on _1113_
+[WARNING DPL-0019] detailed placement failed on _1048_
+[WARNING DPL-0018] detailed placement failed on input89.
+[WARNING DPL-0018] detailed placement failed on input90.
+[WARNING DPL-0018] detailed placement failed on input91.
+[WARNING DPL-0019] detailed placement failed on _0902_
+Placement Analysis
+--------------------------------
+total displacement    12114.8 u
+average displacement     10.3 u
+max displacement        198.1 u
+original HPWL         24472.6 u
+legalized HPWL        38235.3 u
+delta HPWL                 56 %
+
+[INFO DPL-0020] Mirrored 426 instances
+[INFO DPL-0021] HPWL before           38235.3 u
+[INFO DPL-0022] HPWL after            37601.4 u
+[INFO DPL-0023] HPWL delta               -1.7 %
+[WARNING DPL-0004] Placed in rows check failed (3).
+ input11
+ input89
+ input90
+[WARNING DPL-0005] Overlap check failed (89).
+ _0798_ overlaps _0521_
+ _0846_ overlaps _0725_
+ _0897_ overlaps _0887_
+ _0914_ overlaps _0722_
+ _0924_ overlaps _0682_
+ _0959_ overlaps _0813_
+ _0960_ overlaps _0861_
+ _0968_ overlaps _0633_
+ _0973_ overlaps _0948_
+ _0979_ overlaps _0608_
+ _0983_ overlaps _0713_
+ _0992_ overlaps _0824_
+ _1007_ overlaps _0529_
+ _1008_ overlaps _0770_
+ _1009_ overlaps _0945_
+ _1018_ overlaps _0675_
+ _1039_ overlaps _0641_
+ _1048_ overlaps _1038_
+ _1049_ overlaps _1005_
+ _1052_ overlaps _0744_
+ _1059_ overlaps _0706_
+ _1062_ overlaps _0988_
+ _1069_ overlaps _1022_
+ _1070_ overlaps _0713_
+ _1071_ overlaps _0656_
+ _1074_ overlaps _1010_
+ _1077_ overlaps _0819_
+ _1081_ overlaps _0962_
+ _1083_ overlaps _0813_
+ _1084_ overlaps _0768_
+ _1093_ overlaps _0939_
+ _1095_ overlaps _0936_
+ _1104_ overlaps _0676_
+ _1106_ overlaps _0683_
+ _1109_ overlaps _0722_
+ _1112_ overlaps _0790_
+ _1113_ overlaps _0911_
+ _1115_ overlaps _0782_
+ _1116_ overlaps _1032_
+ _1120_ overlaps _1038_
+ _1129_ overlaps _0837_
+ _1132_ overlaps _1011_
+ _1147_ overlaps _1025_
+ _1159_ overlaps _0841_
+ _1161_ overlaps _0785_
+ _1177_ overlaps _0863_
+ _1187_ overlaps _0794_
+ _1189_ overlaps _0776_
+ _1216_ overlaps _0902_
+ PHY_98 overlaps PHY_1
+ PHY_300 overlaps PHY_89
+ input1 overlaps _0976_
+ input4 overlaps _1020_
+ input5 overlaps _0915_
+ input9 overlaps _1109_
+ input10 overlaps _1036_
+ input13 overlaps _1119_
+ input14 overlaps _1119_
+ input16 overlaps _1112_
+ input22 overlaps _1104_
+ input23 overlaps _1106_
+ input26 overlaps _0921_
+ input29 overlaps _1033_
+ input32 overlaps input17
+ input35 overlaps _1145_
+ input44 overlaps _1081_
+ input45 overlaps _1148_
+ input49 overlaps _1035_
+ input50 overlaps _1145_
+ input55 overlaps _1145_
+ input56 overlaps _1166_
+ input60 overlaps _1158_
+ input62 overlaps _1158_
+ input66 overlaps _1096_
+ input70 overlaps _1096_
+ input71 overlaps _0744_
+ input75 overlaps _1002_
+ input76 overlaps _0936_
+ input78 overlaps _1079_
+ input81 overlaps _0969_
+ input82 overlaps _0966_
+ input83 overlaps _1040_
+ input84 overlaps _1079_
+ input85 overlaps _1046_
+ input91 overlaps PHY_97
+ input92 overlaps _1093_
+ input93 overlaps _1001_
+ input94 overlaps _1216_
+ output139 overlaps input77
+[WARNING DPL-0006] Site check failed (4).
+ input11
+ input89
+ input90
+ input91

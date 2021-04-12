@@ -1,0 +1,177 @@
+Mon Apr 12 08:22:35 UTC 2021 - Executing "python3 /openLANE_flow/scripts/extract_metal_layers.py -t /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/met_layers_list.txt"
+
+Mon Apr 12 08:22:35 UTC 2021 - Executing "/openLANE_flow/scripts/mergeLef.py -i /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef {/home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fill_12.lef /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__decap_12.lef /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fakediode_2.lef} -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Mon Apr 12 08:22:36 UTC 2021 - Executing "/openLANE_flow/scripts/libtrim.pl /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/trimmed.lib.exclude.list > /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/trimmed.lib"
+
+Mon Apr 12 08:22:36 UTC 2021 - Executing "echo {openlane v0.12-4-g3f66c6e} > /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/OPENLANE_VERSION"
+
+Mon Apr 12 08:22:36 UTC 2021 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib"
+
+Mon Apr 12 08:22:36 UTC 2021 - Executing "yosys -c /openLANE_flow/scripts/synth.tcl -l /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/synthesis/1-yosys.log |& tee >&@stdout"
+
+Mon Apr 12 08:22:38 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:22:38 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 0/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:22:38 UTC 2021 - Executing "sed -i /defparam/d /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/synthesis/a25_coprocessor.synthesis.v"
+
+Mon Apr 12 08:22:38 UTC 2021 - Executing "sta /openLANE_flow/scripts/sta.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/synthesis/2-opensta"
+
+Mon Apr 12 08:22:39 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_floorplan.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/floorplan/3-verilog2def.openroad.log"
+
+Mon Apr 12 08:22:41 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_ioplacer.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/floorplan/4-ioPlacer.log"
+
+Mon Apr 12 08:22:42 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_tapcell.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/floorplan/5-tapcell.log"
+
+Mon Apr 12 08:22:44 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/floorplan/a25_coprocessor.floorplan.def |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/6-klayout.scrot.log"
+
+Mon Apr 12 08:22:48 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_pdn.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/floorplan/7-pdn.log"
+
+Mon Apr 12 08:22:50 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_replace.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/placement/8-replace.log"
+
+Mon Apr 12 08:22:58 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_resizer.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/placement/8-resizer.log"
+
+Mon Apr 12 08:23:05 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/9-write_verilog.log"
+
+Mon Apr 12 08:23:07 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis_optimized.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:23:07 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:23:07 UTC 2021 - Executing "sta /openLANE_flow/scripts/sta.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/synthesis/10-opensta_post_resizer"
+
+Mon Apr 12 08:23:08 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_opendp.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/placement/11-opendp.log"
+
+Mon Apr 12 08:23:10 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/placement/a25_coprocessor.placement.def |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/12-klayout.scrot.log"
+
+Mon Apr 12 08:23:14 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_cts.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/cts/13-cts.log"
+
+Mon Apr 12 08:24:42 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/14-write_verilog.log"
+
+Mon Apr 12 08:24:43 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis_cts.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:24:43 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis_optimized.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:24:43 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/cts/a25_coprocessor.cts.def |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/15-klayout.scrot.log"
+
+Mon Apr 12 08:24:48 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_resizer_timing.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/placement/15-resizer_timing.log"
+
+Mon Apr 12 08:24:55 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/16-write_verilog.log"
+
+Mon Apr 12 08:24:56 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis_optimized.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:24:56 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis_cts.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:24:56 UTC 2021 - Executing "sta /openLANE_flow/scripts/sta.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/synthesis/17-opensta_post_resizer_timing"
+
+Mon Apr 12 08:24:57 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_groute.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/routing/18-fastroute.log"
+
+Mon Apr 12 08:25:06 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_fill.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/routing/19-addspacers.log"
+
+Mon Apr 12 08:25:07 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/20-write_verilog.log"
+
+Mon Apr 12 08:25:09 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis_preroute.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:25:09 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis_optimized.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:25:09 UTC 2021 - Executing "envsubst < /openLANE_flow/scripts/tritonRoute.param > /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/routing/21-tritonRoute.param"
+
+Mon Apr 12 08:25:09 UTC 2021 - Executing "TritonRoute /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/routing/21-tritonRoute.param |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/routing/21-tritonRoute.log"
+
+Mon Apr 12 08:25:57 UTC 2021 - Executing "python3 /openLANE_flow/scripts/tr2klayout.py -i /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/routing/21-tritonRoute.drc -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/routing/21-tritonRoute.klayout.xml --design-name a25_coprocessor"
+
+Mon Apr 12 08:25:58 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/routing/a25_coprocessor.def |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/22-klayout.scrot.log"
+
+Mon Apr 12 08:26:03 UTC 2021 - Executing "python3 /openLANE_flow/scripts/spef_extractor/main.py -l /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/merged_unpadded.lef -d /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/routing/a25_coprocessor.def -mw L -ec 1 |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/routing/23-spef_extraction.log"
+
+Mon Apr 12 08:26:04 UTC 2021 - Executing "sta /openLANE_flow/scripts/sta.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/synthesis/24-opensta_spef"
+
+Mon Apr 12 08:26:05 UTC 2021 - Executing "python3 /openLANE_flow/scripts/write_powered_def.py -d /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/routing/a25_coprocessor.def -l /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/merged.lef --power-port VPWR --ground-port VGND --powered-netlist {} -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/routing/25-a25_coprocessor.powered.def |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/lvs/25-write_powered_verilog.log"
+
+Mon Apr 12 08:26:05 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/26-write_verilog.log"
+
+Mon Apr 12 08:26:07 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/lvs\/a25_coprocessor.lvs.powered.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:26:07 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openLANE_flow\/designs\/a25_coprocessor\/runs\/second_trial_run\/results\/synthesis\/a25_coprocessor.synthesis_preroute.v/} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/config.tcl"
+
+Mon Apr 12 08:26:07 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/ubuntu/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/mag_gds.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/magic/27-magic.log"
+
+Mon Apr 12 08:26:08 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/magic/a25_coprocessor.gds |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/28-klayout.scrot.log"
+
+Mon Apr 12 08:26:13 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/ubuntu/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/gds_pointers.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/magic/29-magic.mag.gds_ptrs.log"
+
+Mon Apr 12 08:26:14 UTC 2021 - Executing "sed -i -n {/^<< properties >>/,/^<< end >>/p} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/magic/magic_gds_ptrs.mag"
+
+Mon Apr 12 08:26:14 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/ubuntu/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/lef.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/magic/30-magic.lef.log"
+
+Mon Apr 12 08:26:15 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/ubuntu/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/maglef.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/magic/31-magic.maglef.log"
+
+Mon Apr 12 08:26:15 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/def2gds.sh /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/routing/a25_coprocessor.def a25_coprocessor /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.gds {/home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fakediode_2.gds /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__decap_12.gds /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fill_12.gds } |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/32-klayout.log"
+
+Mon Apr 12 08:26:19 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.gds |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/33-klayout.scrot.log"
+
+Mon Apr 12 08:26:25 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/xor.sh /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/magic/a25_coprocessor.gds /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.gds a25_coprocessor /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.xor.gds |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/34-klayout.xor.log"
+
+Mon Apr 12 08:26:34 UTC 2021 - Executing "python3 /openLANE_flow/scripts/parse_klayout_xor_log.py -l /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/34-klayout.xor.log -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/klayout/34-klayout.xor.rpt"
+
+Mon Apr 12 08:26:34 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.xor.gds |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/35-klayout.scrot.log"
+
+Mon Apr 12 08:26:39 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/xor.sh /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/magic/a25_coprocessor.gds /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.gds a25_coprocessor /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.xor.xml |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/36-klayout.xor.log"
+
+Mon Apr 12 08:26:52 UTC 2021 - Executing "python3 /openLANE_flow/scripts/parse_klayout_xor_log.py -l /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/klayout/36-klayout.xor.log -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/klayout/36-klayout.xor.rpt"
+
+Mon Apr 12 08:26:52 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/ubuntu/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/magic_spice.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/magic/37-magic_spice.log"
+
+Mon Apr 12 08:26:55 UTC 2021 - Executing "netgen -batch source /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/tmp/lvs/setup_file.lef.lvs |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/lvs/38-lvs.lef.log"
+
+Mon Apr 12 08:26:55 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/ubuntu/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/drc.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/magic/39-magic.drc.log"
+
+Mon Apr 12 08:27:01 UTC 2021 - Executing "python3 /openLANE_flow/scripts/magic_drc_to_tcl.py -i /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/magic/39-magic.drc -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/magic/39-magic.drc.tcl"
+
+Mon Apr 12 08:27:01 UTC 2021 - Executing "python3 /openLANE_flow/scripts/magic_drc_to_tr_drc.py -i /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/magic/39-magic.drc -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/magic/39-magic.tr.drc"
+
+Mon Apr 12 08:27:01 UTC 2021 - Executing "python3 /openLANE_flow/scripts/tr2klayout.py -i /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/magic/39-magic.tr.drc -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/magic/39-magic.drc.klayout.xml --design-name a25_coprocessor"
+
+Mon Apr 12 08:27:01 UTC 2021 - Executing "python3 /openLANE_flow/scripts/magic_drc_to_rdb.py --magic_drc_in /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/magic/39-magic.drc --rdb_out /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/magic/39-magic.drc.rdb"
+
+Mon Apr 12 08:27:01 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_antenna_check.tcl |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/routing/40-or_antenna.log"
+
+Mon Apr 12 08:27:03 UTC 2021 - Executing "mv -f /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/routing/antenna.rpt /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/routing/41-antenna.rpt"
+
+Mon Apr 12 08:27:03 UTC 2021 - Executing "awk { BEGIN {  # Print power and standard_input definitions
+    print "VPWR power 1.8";
+    print "VGND power 0.0";
+    print "#define std_input min@VGND max@VPWR";
+}
+$1 == "input" {  # Print input nets
+    gsub(/;/, "");
+    if ( $2 == "VPWR" || $2 == "VGND" ) {  # ignore power nets
+        next;
+    }
+    if ( NF == 3 ) {  # print buses as net[range]
+        $2 = $3 $2;
+    }
+    print $2, "input std_input";
+}} /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/lvs/a25_coprocessor.lvs.powered.v > /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/cvc/a25_coprocessor.power"
+
+Mon Apr 12 08:27:03 UTC 2021 - Executing "awk { /Black-box entry subcircuit/ {  # remove black-box defintions
+    while ( $1 != ".ends" ) {
+        getline;
+    }
+    getline;
+}
+/^\*/ {  # remove comments
+    next;
+}
+/^.ENDS .*/ {  # remove name from ends lines
+    print $1;
+    next;
+}
+ {
+    print $0;
+}} /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/cdl/sky130_fd_sc_hd.cdl /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/magic/a25_coprocessor.lef.spice > /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/cvc/a25_coprocessor.cdl"
+
+Mon Apr 12 08:27:03 UTC 2021 - Executing "cvc /openLANE_flow/scripts/cvc/sky130A/cvcrc.sky130A |& tee >&@stdout /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/logs/cvc/42-cvc_screen.log"
+
+Mon Apr 12 08:27:03 UTC 2021 - Executing "python3 /openLANE_flow/report_generation_wrapper.py -d /openLANE_flow/designs/a25_coprocessor -dn a25_coprocessor -t second_trial_run -o /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/final_summary_report.csv -m /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/manufacturability_report.rpt -rs /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/reports/runtime_summary_report.rpt -r /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run"
+

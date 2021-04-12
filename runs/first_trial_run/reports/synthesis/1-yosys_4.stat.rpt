@@ -1,0 +1,32 @@
+
+28. Printing statistics.
+
+=== a25_coprocessor ===
+
+   Number of wires:                662
+   Number of wire bits:            807
+   Number of public wires:         155
+   Number of public wire bits:     300
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                712
+     sky130_fd_sc_hd__a22o_2       168
+     sky130_fd_sc_hd__buf_1        107
+     sky130_fd_sc_hd__buf_2         33
+     sky130_fd_sc_hd__dfxtp_2      171
+     sky130_fd_sc_hd__inv_2        135
+     sky130_fd_sc_hd__mux2_2         3
+     sky130_fd_sc_hd__nand2_2        1
+     sky130_fd_sc_hd__nor3_2         1
+     sky130_fd_sc_hd__o211ai_2       8
+     sky130_fd_sc_hd__o221a_2       16
+     sky130_fd_sc_hd__o221ai_2      24
+     sky130_fd_sc_hd__o22a_2        19
+     sky130_fd_sc_hd__or2_2          1
+     sky130_fd_sc_hd__or2b_2        13
+     sky130_fd_sc_hd__or3_2          5
+     sky130_fd_sc_hd__or4_2          7
+
+   Chip area for module '\a25_coprocessor': 7492.185600
+

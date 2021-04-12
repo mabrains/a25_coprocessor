@@ -1,0 +1,10 @@
+Using Techfile: /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt
+Using layout file: /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.xor.gds
+[INFO] Reading tech file: /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt
+[INFO] Reading Layout file: /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.xor.gds
+Warning: Record length larger than 0x8000 encountered: interpreting as unsigned (position=3525766, record number=232744, cell=XOR)
+Warning: Record length larger than 0x8000 encountered: interpreting as unsigned (position=3828982, record number=233174, cell=XOR)
+Warning: Record length larger than 0x8000 encountered: interpreting as unsigned (position=3872358, record number=233219, cell=XOR)
+Warning: Record length larger than 0x8000 encountered: interpreting as unsigned (position=3946054, record number=233299, cell=XOR)
+[INFO] Writing out PNG screenshot '/openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.xor.gds.png'
+Done

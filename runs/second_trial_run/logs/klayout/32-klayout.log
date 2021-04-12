@@ -1,0 +1,18 @@
+Using Techfile: /home/ubuntu/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt
+Using DEF file: /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/routing/a25_coprocessor.def
+Design Name: a25_coprocessor
+Output GDS will be: /openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.gds
+Extra GDSes:
+/home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fakediode_2.gds /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__decap_12.gds /home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fill_12.gds
+[INFO] Clearing cells...
+[INFO] Merging GDS files...
+	/home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+	/home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fakediode_2.gds
+	/home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__decap_12.gds
+	/home/ubuntu/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fill_12.gds
+[INFO] Copying toplevel cell 'a25_coprocessor'
+WARNING: no fill config file specified
+[INFO] Checking for missing GDS...
+[INFO] All LEF cells have matching GDS cells
+[INFO] Writing out GDS '/openLANE_flow/designs/a25_coprocessor/runs/second_trial_run/results/klayout/a25_coprocessor.gds'
+Done

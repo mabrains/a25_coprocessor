@@ -1,0 +1,15 @@
+VPWR power 1.8
+VGND power 0.0
+#define std_input min@VGND max@VPWR
+i_clk input std_input
+i_core_stall input std_input
+i_fault input std_input
+i_copro_crm[3:0] input std_input
+i_copro_crn[3:0] input std_input
+i_copro_num[3:0] input std_input
+i_copro_opcode1[2:0] input std_input
+i_copro_opcode2[2:0] input std_input
+i_copro_operation[1:0] input std_input
+i_copro_write_data[31:0] input std_input
+i_fault_address[31:0] input std_input
+i_fault_status[7:0] input std_input
